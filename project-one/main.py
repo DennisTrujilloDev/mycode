@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """COMMENT HERE"""
-print("Welcome to: Which Metropolis Suits Your Lifestyle?: Int'l Edition")
+print("'What Metropolises Suits Your Lifestyle?'")
 user = input("To get started, please enter your name: \n")
 
 #COUNTERS
@@ -85,5 +85,11 @@ while True:
 #results
 cities = [{"name": "Mumbai", "counter": counter_Mumbai}, {"name": "NYC", "counter": counter_NYC}, {"name": "LA", "counter": counter_LA},{"name": "Mexico City", "counter": counter_CDMX}, {"name": "Berlin", "counter": counter_Berlin}]
 sorted_cities = sorted(cities, key=lambda d: d["counter"])
+#above line
 print(sorted_cities)
-print(f"{user}, {sorted_cities[-1]['name']} suits your lifestyle -- time to book a flight! Thank you for stopping by!")
+print(f"A couple cities {user} would enjoy:\
+{sorted_cities[-1]['name']}\
+& {sorted_cities[-2]['name']}\
+Time to book those flights!\
+For deals check out https://matrix.itasoftware.com/search\
+Thank you for stopping by!")
