@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    {# checks if the variable passed in is valid #}
+    {% if moves_list %}
+    {# loops over the data #}
+    {% for move in moves_list.results %}
+    {# prints the name of the move as a link #}
+    <p><a target="_blank" href="{{ move.url }}"> {{ move.name }}</a> </p>
+    {# ends for loop #}
+    {% endfor %}
+    {# ends conditional #}
+    {% endif %}
+</body>
+</html>
+
