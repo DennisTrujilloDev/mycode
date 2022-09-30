@@ -77,13 +77,13 @@ def main():
             if 'east' in rooms[currentRoom]:
                 print(crayons.yellow('    go east'))
             #if north is in the available directions for that room  
-            elif 'north' in rooms[currentRoom]:
+            if 'north' in rooms[currentRoom]:
                 print(crayons.yellow('    go north'))
             # if west is in the available directions for that room 
-            elif 'west' in rooms[currentRoom]:
+            if 'west' in rooms[currentRoom]:
                 print(crayons.yellow('    go west'))
             #if south is in the available directions for that room 
-            elif 'south' in rooms[currentRoom]:
+            if 'south' in rooms[currentRoom]:
                 print(crayons.yellow('    go south\ln'))
     
         # print the number of lives and moves available 
@@ -109,7 +109,7 @@ def main():
     rooms = {
         
             'Lobby' : {
-                'east' : 'Room 113',
+                'east': 'Room 113',
                 'west': 'Room 138'      
             },
             "Dark passage": { 
