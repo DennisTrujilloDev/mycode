@@ -6,22 +6,24 @@ from flask import jsonify
 from flask import render_template
 import requests   
 import json
+from random import randint as ri
 
 # creates an instance of the Flask object
 app = Flask(__name__)
 
+best_pokemon = [{
+    "title": "best pokemon", 
+    "best": ["Suicune", 
+            "Pikachu", 
+            "Mewtwo"
+        ]
+    }]
+
 #targets the home endpoint
-@app.route('/')
-def get_pokes(): 
-    p_api = "http://pokeapi.co/api/v2/pokemon/?limit=100"   
-    # sends a get request to the pokemon API
-    info = requests.get(p_api).json()     
-    #iterates over the response
-    for indiv in info['results']:
-        #jsonifies one of the elements 
-        jsonify(indiv)
-    #returns the first element, ending loop    
-    return indiv 
+@app.route('/') 
+def get_pokes():
+    # returns a jsonfied version of the the best pokemon 
+    return jsonify(best_pokemon)
     
 #targets the /moves endpoint
 @app.route('/moves')
